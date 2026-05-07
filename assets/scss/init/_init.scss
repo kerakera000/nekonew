@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@use "variable" as *;
+@use "mixin" as *;
+/* CSS Document */
+/*
+  ------------------------------------
+  ####################################
+   #Common style
+  ####################################
+  ------------------------------------
+*/
+
+
+$dir-common: $dir + "init";
+/* Reset */
+@include reset;
+
+*{
+	box-sizing: border-box;
+	word-break: break-word;
+
+}
+html {
+	background: $white;
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 100%;
+	line-height: $line-height;
+	font-size: 1.4rem;
+	color: $font-color;
+	letter-spacing: 1px;
+
+	&.is-hidden {
+		overflow: hidden;
+	}
+	@include mqd($md){
+
+		min-width: inherit;
+		width: 100%;
+	}
+}
+
+.error{
+	color: red;
+	margin: 10px 0;
+}
+.wrap {
+	overflow: hidden;
+	width: 100%;
+	transition: opacity .3s;
+	&.js-load{
+		opacity: 1;
+	}
+}
+a {
+	text-decoration: none;
+	color: $black;
+	transition:.3s opacity;
+	&:hover{
+		opacity: .7;
+	}
+}
+
+
+img{
+	max-width: 100%;
+}
+small{
+	font-size: 85%;
+}
+
+
+.no_post{
+	text-align: center;
+	width: 100%;
+}
+.is-pc {
+	display: block;
+}
+
+.is-pc-flex {
+	display: flex;
+}
+
+.is-pc-ib {
+	display: inline-block;
+}
+
+.is-sp,
+.is-sp-flex,
+.is-sp-flex,
+.is-sp-ib {
+	display: none !important;
+}
+
+
+@include mqd($md){
+	.is-sp {
+		display: block !important;
+	}
+	.is-sp-flex {
+		display: flex !important;
+	}
+
+	.is-sp-ib {
+		display: inline-block !important;
+	}
+
+	.is-pc,
+	.is-pc-flex,
+	.is-pc-ib {
+		display: none !important;
+	}
+}
+
+#wpadminbar{
+	position: fixed !important;
+}
+

@@ -1,0 +1,250 @@
+@charset "UTF-8";
+@use "variable" as *;
+@use "mixin" as *;
+//
+%extend_module_manual {
+  /*
+    ------------------------------------
+    ####################################
+     extend_module
+     ※ extend用共通モジュール
+    ####################################
+    ------------------------------------
+  */
+}
+
+%ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+
+%hidetext {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+
+%form {
+  @include form-reset;
+  font-size: 1.6rem;
+  @include mqd($md){
+    font-size: 1.6rem;
+  }
+  .select {
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    background: $white;
+    border: 2px solid $color01;
+    border-radius: 0px;
+    &:before {
+      @include content(7px, 7px);
+      border-right: 1px solid $selectArrowColor;
+      border-bottom: 1px solid $selectArrowColor;
+      @include trans-y(45);
+      top: 45%;
+      right: 20px;
+      z-index: 0;
+      cursor: pointer;
+    }
+
+    select {
+      width: 100%;
+      height: 100%;
+      padding: 10px 30px 10px 20px;
+      color: $color01;
+      box-sizing: border-box;
+      display: block;
+      position: relative;
+      line-height: 1.6;
+      z-index: 1;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"]{
+
+    color: $color01;
+    box-sizing: border-box;
+    padding:10px 20px;
+    display: block;
+    width: 100%;
+    background: $white;
+    line-height: 1.6;
+    border: 2px solid $color01;
+    border-radius: 0px;
+    &::placeholder {
+      color: #B7AFA3;
+
+    }
+  }
+  textarea{
+    color: $color01;
+    background: $white;
+    box-sizing: border-box;
+    padding:10px 20px;
+    display: block;
+    width: 100%;
+    resize: vertical;
+    font-weight: normal !important;
+    border: 2px solid $color01;
+    border-radius: 0px;
+    &::placeholder {
+      color: #B7AFA3;
+      font-weight: normal !important;
+    }
+  }
+
+  input[type="checkbox"]{
+    & + span {
+      padding-left: 40px;
+      position: relative;
+      margin-right: 40px;
+      color: $color01;
+      font-weight: 500;
+      &:after{
+        transition:background-color 0.3s;
+        @include content(20px, 20px, #fff);
+        @include trans-y;
+        left: 0;
+        border-radius: 0px;
+        border: 2px solid $color01;
+      }
+      &:before {
+        transition:background-color 0.3s;
+        @include content(0, 0);
+        @include trans-y(45);
+        left: 0;
+      }
+    }
+
+    &:checked + span:after{
+      @include content(20px, 20px,$white);
+      @include mqd($md){
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &:checked + span:before {
+      @include content(8px, 18px);
+      @include trans-y(45);
+      left: 6px;
+      border: none;
+      background: none;
+      border-bottom: 3px solid $color00;
+      border-right: 3px solid $color00;
+      border-radius: 0;
+      z-index: 1;
+      top: 8px;
+    }
+  }
+  input[type="checkbox"] {
+    & + span {
+      margin-right: 20px;
+      &:after {
+        background-color: #fff;
+      }
+    }
+    &:checked + .wpcf7-list-item-label{
+      position: relative;
+      display: block;
+      width: fit-content;
+    }
+    &:checked + .wpcf7-list-item-label:after {
+      background-color: #fff;
+
+    }
+  }
+  input[type="radio"] {
+    & + .mwform-radio-field-text {
+      padding-left: 20px;
+      position: relative;
+
+      &:before {
+        transition: 0.3s;
+        @include content($radioSize, $radioSize, #fff);
+        @include trans-y;
+        left: 0;
+        border-radius: 50%;
+        border: 1px solid #111;
+      }
+
+      &:after {
+        @include content($radioSizeSmall, $radioSizeSmall, #fff);
+        left: 2px;
+        transition: 0.3s;
+        opacity: 0;
+        @include trans-y(0, 0);
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+
+    &:checked + .mwform-radio-field-text:after {
+      @include content($radioSizeSmall, $radioSizeSmall, $color00);
+      left: 3px;
+      @include trans-y(0, 1);
+      border-radius: 50%;
+      opacity: 1;
+      z-index: 1;
+    }
+
+  }
+  .mwform-radio-field.horizontal-item{
+    display: block;
+    padding-left: 0;
+    margin-bottom: 10px;
+    margin-left: 0 !important;
+  }
+  input[type="radio"] {
+    & + .mwform-radio-field-text {
+      padding-left: 25px;
+      position: relative;
+      //display: block;
+      //width: fit-content;
+      color: $color01;
+      font-weight: 500;
+
+      &:before {
+        transition: 0.3s;
+        @include content($radioSize, $radioSize, #fff);
+        @include trans-y;
+        left: 0;
+        border-radius: 50%;
+        border: 1px solid $color01;
+      }
+
+      &:after {
+        @include content($radioSizeSmall, $radioSizeSmall, #fff);
+        left: 2px;
+        transition: 0.3s;
+        opacity: 0;
+        @include trans-y(0, 0);
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+
+  }
+  button,input[type='submit']{
+    cursor: pointer;
+  }
+
+  @include mqd($md){
+    //iPhoneコンテンツ拡大防止のため16px固定
+    input[type="text"],input[type="tel"],input[type="email"],
+    textarea,
+    select {
+    }
+  }
+}

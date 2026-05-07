@@ -1,0 +1,45 @@
+@use "../init/index" as *;
+
+
+.footer {
+    background-color: #ffe9ee;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 42px 0 ;
+    .container{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @media (max-width: 900px) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    .footer-content {
+        &--logo {
+            width: 100%;
+            max-width: 250px;
+        }
+        &--linkbox {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            &--linkrow {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                &--text {
+                    color: #666666;
+                    font-size: 16px;
+                    font-weight: 700;
+                    &:hover{
+                        color: rgb(255, 15, 107);
+                    }
+                }
+            }
+        }
+        
+    }
+}

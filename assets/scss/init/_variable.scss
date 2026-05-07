@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+//  ####################################
+//   option_module
+//   ※ projectの基本設定
+//  ####################################
+
+
+//  ------------------------------------
+//   MediaScreen指定
+//  ------------------------------------
+$pc: 1920px; //site Size
+$lg: 1330px; //inner Size
+$md: 768px; // tablet
+$sm: 500px; // sp
+$se: 380px; // SP
+
+
+//  ------------------------------------
+//   ベースプロパティ
+//  ------------------------------------
+
+$black: #222222;
+
+$dark-gray: #666666;
+$gray: #757575;
+$light-gray: #F0ECEC;
+$bg-gray: #eee;
+
+$green: #004530;
+$orange: #FF7246;
+$brown: #5C3700;
+$yellow: #FCDE8C;
+$pink: #ED89BF;
+$lime-green: #56CBBD;
+$ocher: #C98B00;
+$purple: #B67CE2;
+$light-green: #89F0BD;
+$blue: #44A3EA;
+$light-blue: #8DBCE0;
+$dark-blue: #3D7BAA;
+$magenta:#E04B73;
+$sand: #F0E9DC;
+$red: #ED4942;
+
+$white: #fff;
+
+
+$color00: $green;
+$color01: $brown;
+$color02: $dark-blue;
+$color03: $light-blue;
+
+$bg-color: #ffffff;
+$bg-color0:#BEAF99;
+$bg-color1:#99B5AC;
+$bg-color2:#FCF3ED;
+$bg-color3:#333333;
+$bg-color4:#222;
+
+
+$white2: #f2f2f2;
+$gray-font: $dark-gray;
+$gray-light: #AAAAAA;
+
+$gray-base: #F7F7F7;
+$base-gray:$gray-base;
+
+$base-black:#2e2e2e;
+$border-color: #CCCCCC;
+$border-gray:#9A9A9A;
+$border-gray2: #c4c4c4;
+
+
+
+$font-color: $black;
+$line-height: 1.6;
+$a-color: #666;
+$basefont: 14px;
+
+
+//  ------------------------------------
+//   CSSからのIMGロード
+//  ------------------------------------
+$dir : "../img";
+$font-dir : "../fonts";
+
+//  ------------------------------------
+//   FONT指定
+//  ------------------------------------
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
+
+@mixin fosan {
+  font-family: "Noto Sans", serif;
+}
+@mixin fosanjp {
+  font-family: "Noto Sans JP", serif;
+}
+//ゴシック
+@mixin fogo {
+  //ヒラギノ角ゴ
+  font-family:"Zen Kaku Gothic New", 'ヒラギノ角ゴシック', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+}
+@mixin foopensa {
+  font-family: "Open Sans", serif;
+}
+
+//  webフォント
+@mixin fozenold {
+  font-family: "Zen Old Mincho", serif;
+}
+
+@mixin web-font02 {
+  font-family: "メイリオ", sans-serif;
+  //font-family:'Montserrat',"Gill Sans",gill-sans-nova,"Open Sans", serif;
+  //font-weight:800;
+}
+@mixin web-font03 {
+  //font-family: 'futura-condensed-bold', sans-serif;
+}
+
+//  ------------------------------------
+//   FORM設定
+//  ------------------------------------
+
+//RadioBox円形サイズ
+
+$radioSize: 14px;
+$radioSizeSmall: $radioSize - 4px;
+$formItemsColor: $color01;
+$inputBorder: $color01;
+$selectArrowColor: $color01;
+
+
+
+//  ------------------------------------
+//   Responsive指定
+//  ------------------------------------
+
+@mixin mqd($breakPoint) {
+  @media screen and (max-width: $breakPoint) {
+    @content;
+  }
+}
+
+
+
+$body-bg: #f8fafc;
+
+$Cardo-font-family: 'Cardo', serif;
+$base-font-family: 'Noto Sans JP', sans-serif;
+$serif-font-family: 'Noto Serif', serif;
+$inter-font-family: 'Inter', sans-serif;
+
+$base-font-size20: 20px;
+$base-font-size18: 18px;
+$base-font-size16: 16px;
+$base-font-size14: 14px;
+$base-font-size12: 12px;
+
+$base-font-color-black: #323232;
