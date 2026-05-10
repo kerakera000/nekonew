@@ -52,7 +52,7 @@ get_template_part('./template/head');
     <div id="NEWS" class="News layout-content">
         <div class="inner-content">
             <h2 class="News__title">
-                お知らせ一覧
+                猫カフェお知らせ一覧
             </h2>
             <div class="News__content">
                 <div class="News__list monnthly">
@@ -190,9 +190,9 @@ get_template_part('./template/head');
                 <div id="ONLINESHOP" class="onlineshop">
                     <h3 class="title">BASE(オンラインショップ)でも販売中！</h3>
                     <p class="text">
-                    オンラインショップでしか取り扱っていない商品も多数ございますので、ぜひご覧下さいませ。<br>
+                    オンラインサイトでしか取り扱っていないねこカフェ商品も多数ございますので、ぜひご覧下さいませ。<br>
                     </p>
-                    <a href="#" class="shop-link">ねこカフェいちごオンラインショップ</a>
+                    <a href="#" class="shop-link">オンラインショップはこちらへ</a>
                 </div>
             </div>
         </div>
@@ -521,6 +521,9 @@ get_template_part('./template/head');
             <h3 class="Access-content-title">
                 店舗一覧
             </h3>
+            <p class="Access-content-text">
+                猫カフェ予約ページはこちら
+            </p>
             <div class="Access-content">
                 <div class="Access-itemimg flex">
                     <a href="<?= $site_url; ?>/index.php/shop1" class="titlebox top-shoplist">

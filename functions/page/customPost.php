@@ -117,6 +117,32 @@ function create_post_type() {
       ),
     )
   );
+
+  // クラウドファンディングお名前掲載投稿
+  /*---------------------------------------------*/
+  register_post_type(
+    'crowdfunding_name',
+    array(
+      'label' => 'CFお名前掲載',
+      'labels' => array(
+        'name' => 'CFお名前掲載',
+        'singular_name' => 'CFお名前掲載',
+        'add_new_item' => '掲載名を追加',
+        'edit_item' => '掲載名を編集',
+      ),
+      'public' => false,
+      'publicly_queryable' => false,
+      'has_archive' => false,
+      'show_in_rest' => true,
+      'show_ui' => true,
+      'menu_position' => 9,
+      'menu_icon' => 'dashicons-groups',
+      'supports' => array(
+        'title',
+        'page-attributes'
+      ),
+    )
+  );
 }
 add_action( 'init', 'create_post_type' );
 

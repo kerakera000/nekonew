@@ -31,9 +31,6 @@ get_template_part('./template/head');
                             <img src="<?= $wp_path; ?>/assets/img/sozai/icon01.svg" alt="ShopInfo">
                             川越クレアモール店
                         </h3>
-                        <p class="sub-title">
-                            2025年10月10日オープン！
-                        </p>
                         <img style="max-height: 300px;" src="<?= $wp_path; ?>/assets/img/shop2/shop.jpg" alt="ShopInfo">
                     </div>
                     <div class="titlebox">
@@ -133,8 +130,14 @@ get_template_part('./template/head');
             <p class="Info__text">
                 詳しくは下記のリンクからチェック！
             </p>
-            <a class="Info__link" href="#">URL(インスタ)</a>
-            <a class="Info__link" href="#">URL(X)</a>
+            <div class="Info__sns-links">
+                <a class="Info__link Info__link--instagram" href="#" aria-label="Instagram">
+                    <img src="<?= $wp_path; ?>/assets/img/sns/instagram-glyph-black.svg" alt="">
+                </a>
+                <a class="Info__link Info__link--x" href="#" aria-label="X">
+                    <img src="<?= $wp_path; ?>/assets/img/sns/x-logo.svg" alt="">
+                </a>
+            </div>
         </div>
     </div>
 

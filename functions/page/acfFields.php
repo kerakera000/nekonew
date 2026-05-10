@@ -217,6 +217,83 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
                 'allow_null' => 0,
                 'multiple' => 0,
             ),
+            array(
+                'key' => 'field_info_template_enabled',
+                'label' => 'テンプレート表示を使う',
+                'name' => 'info_template_enabled',
+                'type' => 'true_false',
+                'ui' => 1,
+                'default_value' => 0,
+            ),
+            array(
+                'key' => 'field_info_template_title',
+                'label' => 'テンプレートタイトル',
+                'name' => 'info_template_title',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => 'タイトルを入力（表示時に【】で囲まれます）',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_info_template_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ),
+            array(
+                'key' => 'field_info_template_body',
+                'label' => 'テンプレート本文',
+                'name' => 'info_template_body',
+                'type' => 'textarea',
+                'default_value' => '',
+                'rows' => 6,
+                'new_lines' => 'wpautop',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_info_template_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ),
+            array(
+                'key' => 'field_info_template_url',
+                'label' => 'テンプレートURL',
+                'name' => 'info_template_url',
+                'type' => 'url',
+                'default_value' => '',
+                'placeholder' => 'https://example.com/',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_info_template_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ),
+            array(
+                'key' => 'field_info_template_image',
+                'label' => 'テンプレート画像',
+                'name' => 'info_template_image',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_info_template_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ),
         ),
         'location' => array(
             array(
@@ -317,6 +394,46 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'crowdfunding_report',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => array(),
+    ));
+
+    acf_add_local_field_group(array(
+        'key' => 'group_crowdfunding_name_fields',
+        'title' => 'クラウドファンディング お名前掲載',
+        'fields' => array(
+            array(
+                'key' => 'field_crowdfunding_display_name',
+                'label' => '掲載名',
+                'name' => 'crowdfunding_display_name',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => 'イトウユリコ様',
+                'instructions' => '未入力の場合は投稿タイトルを表示します。',
+            ),
+            array(
+                'key' => 'field_crowdfunding_name_note',
+                'label' => '補足',
+                'name' => 'crowdfunding_name_note',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '去勢・避妊手術サポーター',
+                'instructions' => '入力すると掲載名の後ろに【補足】として表示します。',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'crowdfunding_name',
                 ),
             ),
         ),

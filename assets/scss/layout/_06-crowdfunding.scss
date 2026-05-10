@@ -118,9 +118,33 @@
             font-weight: 900;
         }
 
+        p {
+            margin: 0;
+        }
+
         @media (max-width: 600px) {
             font-size: 15px;
         }
+    }
+
+    &__supporters-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__supporters-item {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0;
+    }
+
+    &__supporters-note {
+        font-weight: 900;
     }
 
     &__supporters-footer {

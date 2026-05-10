@@ -3,10 +3,11 @@ global $wp_path;
 global $site_url;
 
 get_template_part('./template/head');
+?>
+<?php
 get_template_part('./template/header');
 ?>
-
-<main class="main-layout">
+<main class="main-layout InfoPageFrame">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="Info layout-content">
@@ -24,6 +25,41 @@ get_template_part('./template/header');
                     <div class="Info__description">
                         <?php the_content(); ?>
                     </div>
+
+                    <?php
+                    $template_enabled = function_exists('get_field') ? get_field('info_template_enabled') : false;
+                    $template_title = function_exists('get_field') ? get_field('info_template_title') : '';
+                    $template_body = function_exists('get_field') ? get_field('info_template_body') : '';
+                    $template_url = function_exists('get_field') ? get_field('info_template_url') : '';
+                    $template_image = function_exists('get_field') ? get_field('info_template_image') : '';
+                    $template_image_url = function_exists('neko_get_image_url') ? neko_get_image_url($template_image, 'large') : '';
+                    $has_template_content = $template_title || $template_body || $template_url || $template_image_url;
+                    ?>
+                    <?php if ($template_enabled && $has_template_content) : ?>
+                        <div class="InfoTemplate">
+                            <?php if ($template_title) : ?>
+                                <h2 class="InfoTemplate__title">【<?php echo esc_html($template_title); ?>】</h2>
+                            <?php endif; ?>
+
+                            <?php if ($template_body) : ?>
+                                <div class="InfoTemplate__body">
+                                    <?php echo wp_kses_post(wpautop($template_body)); ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($template_url) : ?>
+                                <a class="InfoTemplate__url" href="<?php echo esc_url($template_url); ?>" target="_blank" rel="noopener">
+                                    <?php echo esc_html($template_url); ?>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if ($template_image_url) : ?>
+                                <div class="InfoTemplate__image">
+                                    <img src="<?php echo esc_url($template_image_url); ?>" alt="<?php echo esc_attr($template_title ?: get_the_title()); ?>">
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
 
                     <?php
                     $gallery_images = function_exists('get_field') ? get_field('gallery_images') : array();
@@ -47,3 +83,4 @@ get_template_part('./template/header');
 </main>
 
 <?php get_template_part('./template/footer'); ?>
+</div>

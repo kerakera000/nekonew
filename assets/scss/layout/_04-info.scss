@@ -1,11 +1,12 @@
 @use "../init/index" as *;
 
-.InfoPage {
+.InfoPageFrame {
     min-height: 100svh;
 }
 .Info {
     &.layout-content {
         padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     &__description {
@@ -106,6 +107,67 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+    }
+}
+
+.InfoTemplate {
+    width: 100%;
+    max-width: 800px;
+    margin: 34px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    color: #333333;
+    text-align: center;
+    @include fosanjp;
+
+    &__title {
+        color: #000000;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.5;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    &__body {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.9;
+
+        p + p {
+            margin-top: 1em;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+    }
+
+    &__url {
+        color: rgb(0, 187, 255);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.6;
+        text-decoration: underline;
+        overflow-wrap: anywhere;
+    }
+
+    &__image {
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 8px;
         }
     }
 }
