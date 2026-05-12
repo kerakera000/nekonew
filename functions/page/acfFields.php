@@ -81,85 +81,8 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 
     acf_add_local_field_group(array(
         'key' => 'group_adoption_detail_fields',
-        'title' => '里親募集 Fields',
+        'title' => '里親募集 詳細ページ Fields',
         'fields' => array(
-            array(
-                'key' => 'field_adoption_name',
-                'label' => '名前',
-                'name' => 'name',
-                'type' => 'text',
-                'default_value' => '',
-            ),
-            array(
-                'key' => 'field_adoption_sex',
-                'label' => '性別',
-                'name' => 'sex',
-                'type' => 'select',
-                'choices' => array(
-                    'おとこのこ' => 'おとこのこ',
-                    'おんなのこ' => 'おんなのこ',
-                ),
-                'default_value' => array(
-                    0 => 'おとこのこ',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_adoption_birthday',
-                'label' => '生年月日',
-                'name' => 'birthday',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => 'YYYY年MM月DD日',
-            ),
-            array(
-                'key' => 'field_adoption_status',
-                'label' => '状況（トライアル中or里親決定）',
-                'name' => 'adoption_status',
-                'type' => 'select',
-                'choices' => array(
-                    'トライアル中' => 'トライアル中',
-                    '里親決定' => '里親決定',
-                ),
-                'default_value' => false,
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_adoption_select_page',
-                'label' => '表示店舗',
-                'name' => 'select_page',
-                'type' => 'select',
-                'choices' => array(
-                    'oomiya' => '大宮黒猫店',
-                    'newshop' => '川越クレアモール店',
-                ),
-                'default_value' => false,
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_adoption_stage',
-                'label' => '募集状況',
-                'name' => 'adoption_stage',
-                'type' => 'select',
-                'choices' => array(
-                    'adoption' => '里親募集',
-                    'before' => '里親募集前',
-                ),
-                'default_value' => false,
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_adoption_neko_img',
-                'label' => '猫の画像',
-                'name' => 'neko_img',
-                'type' => 'image',
-                'return_format' => 'array',
-                'preview_size' => 'medium',
-            ),
             array(
                 'key' => 'field_adoption_color',
                 'label' => '毛色',
@@ -491,3 +414,60 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
         'hide_on_screen' => array(),
     ));
 }
+
+if ( ! function_exists( 'neko_normalize_shop_value' ) ) {
+    function neko_normalize_shop_value( $value ) {
+        if ( is_array( $value ) ) {
+            if ( isset( $value['value'] ) ) {
+                $value = $value['value'];
+            } elseif ( isset( $value['label'] ) ) {
+                $value = $value['label'];
+            } else {
+                return $value;
+            }
+        }
+
+        $value = (string) $value;
+        $map = array(
+            'oomiya' => 'oomiya',
+            '大宮黒猫店' => 'oomiya',
+            'oomiya：大宮黒猫店' => 'oomiya',
+            'newshop' => 'newshop',
+            'クレアモール川越店' => 'newshop',
+            '川越クレアモール店' => 'newshop',
+            'newshop：クレアモール川越店' => 'newshop',
+            'newshop：川越クレアモール店' => 'newshop',
+        );
+
+        return isset( $map[ $value ] ) ? $map[ $value ] : $value;
+    }
+}
+
+if ( ! function_exists( 'neko_load_select_page_field' ) ) {
+    function neko_load_select_page_field( $field ) {
+        $field['choices'] = array(
+            'oomiya' => '大宮黒猫店',
+            'newshop' => '川越クレアモール店',
+        );
+
+        $field['default_value'] = false;
+        $field['allow_null'] = 1;
+
+        return $field;
+    }
+}
+add_filter( 'acf/load_field/name=select_page', 'neko_load_select_page_field' );
+
+if ( ! function_exists( 'neko_load_select_page_value' ) ) {
+    function neko_load_select_page_value( $value, $post_id, $field ) {
+        return neko_normalize_shop_value( $value );
+    }
+}
+add_filter( 'acf/load_value/name=select_page', 'neko_load_select_page_value', 10, 3 );
+
+if ( ! function_exists( 'neko_update_select_page_value' ) ) {
+    function neko_update_select_page_value( $value, $post_id, $field ) {
+        return neko_normalize_shop_value( $value );
+    }
+}
+add_filter( 'acf/update_value/name=select_page', 'neko_update_select_page_value', 10, 3 );
