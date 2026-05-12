@@ -1054,6 +1054,7 @@ html {
 }
 
 .News {
+  padding: 0 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1291,6 +1292,7 @@ html {
 }
 
 .HowToUse {
+  padding: 0 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1478,6 +1480,7 @@ html {
 }
 
 .ShopInfo {
+  padding: 0 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1597,7 +1600,7 @@ html {
 }
 
 .Access {
-  padding-top: 90px;
+  padding: 90px 20px 50px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1829,6 +1832,7 @@ html {
 }
 
 .SNS {
+  padding: 0 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1891,6 +1895,7 @@ html {
 }
 
 .Price {
+  padding: 0 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -2057,6 +2062,7 @@ html {
 }
 
 .QA {
+  padding: 0 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -2148,6 +2154,7 @@ html {
 
 .Reserve {
   width: 100%;
+  padding: 0 20px;
   margin-bottom: 100px;
 }
 .Reserve .Reserve-content {
@@ -2200,6 +2207,7 @@ html {
 }
 
 .Information {
+  padding: 0 20px;
   width: 100%;
 }
 .Information .Information-content {
@@ -3134,6 +3142,7 @@ html {
 }
 
 .Info {
+  padding: 0 20px;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -3244,6 +3253,9 @@ html {
     font-size: 1.3rem;
   }
 }
+.Adoption {
+  padding: 0 20px;
+}
 .Adoption__titlebox {
   margin-top: 100px;
   margin-bottom: 10px;
@@ -3296,6 +3308,10 @@ html {
   height: auto;
 }
 
+.Adoption,
+.AdoptionBefore {
+  padding: 0 20px;
+}
 .Adoption .inner-content .commonH2,
 .AdoptionBefore .inner-content .commonH2 {
   margin-bottom: 24px;

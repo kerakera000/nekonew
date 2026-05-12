@@ -1,6 +1,7 @@
 @use "../init/index" as *;
 
 .Adoption {
+    padding: 0 20px;
     &__titlebox {
         margin-top: 100px;
         margin-bottom: 10px;
@@ -52,6 +53,7 @@
 
 .Adoption,
 .AdoptionBefore {
+    padding: 0 20px;
   .inner-content {
     .commonH2 {
       margin-bottom: 24px;
