@@ -30,7 +30,13 @@ get_template_part('./template/head');
             'relation' => 'AND',
             array(
                 'key' => 'select_page',
-                'value' => array('川越クレアモール店', 'newshop', 'newshop：川越クレアモール店'),
+                'value' => array(
+                    'クレアモール川越店',
+                    '川越クレアモール店',
+                    'newshop',
+                    'newshop：クレアモール川越店',
+                    'newshop：川越クレアモール店'
+                ),
                 'compare' => 'IN'
             ),
             array(

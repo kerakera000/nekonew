@@ -5,12 +5,12 @@
 
 if ( function_exists( 'acf_add_local_field_group' ) ) {
     acf_add_local_field_group(array(
-        'key' => 'group_cats_adoption_fields',
-        'title' => 'Cats Adoption Fields',
+        'key' => 'group_cats_profile_fields',
+        'title' => '猫紹介 Fields',
         'fields' => array(
             array(
                 'key' => 'field_cats_select_page',
-                'label' => '表示ページ',
+                'label' => '表示店舗',
                 'name' => 'select_page',
                 'type' => 'select',
                 'choices' => array(
@@ -22,37 +22,6 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
                 ),
                 'allow_null' => 0,
                 'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_cats_adoption_stage',
-                'label' => '里親ステージ',
-                'name' => 'adoption_stage',
-                'type' => 'select',
-                'choices' => array(
-                    'adoption' => '里親募集',
-                    'before' => '里親募集前',
-                ),
-                'default_value' => array(
-                    0 => '里親募集前',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_cats_adoption_status',
-                'label' => '里親ステータス',
-                'name' => 'adoption_status',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => 'トライアル中 / 譲渡可能 など',
-            ),
-            array(
-                'key' => 'field_cats_status',
-                'label' => 'ステータス',
-                'name' => 'status',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => 'ステータスを入力',
             ),
             array(
                 'key' => 'field_cats_name',
@@ -112,8 +81,85 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 
     acf_add_local_field_group(array(
         'key' => 'group_adoption_detail_fields',
-        'title' => '里親募集 詳細ページ Fields',
+        'title' => '里親募集 Fields',
         'fields' => array(
+            array(
+                'key' => 'field_adoption_name',
+                'label' => '名前',
+                'name' => 'name',
+                'type' => 'text',
+                'default_value' => '',
+            ),
+            array(
+                'key' => 'field_adoption_sex',
+                'label' => '性別',
+                'name' => 'sex',
+                'type' => 'select',
+                'choices' => array(
+                    'おとこのこ' => 'おとこのこ',
+                    'おんなのこ' => 'おんなのこ',
+                ),
+                'default_value' => array(
+                    0 => 'おとこのこ',
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+            array(
+                'key' => 'field_adoption_birthday',
+                'label' => '生年月日',
+                'name' => 'birthday',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => 'YYYY年MM月DD日',
+            ),
+            array(
+                'key' => 'field_adoption_status',
+                'label' => '状況（トライアル中or里親決定）',
+                'name' => 'adoption_status',
+                'type' => 'select',
+                'choices' => array(
+                    'トライアル中' => 'トライアル中',
+                    '里親決定' => '里親決定',
+                ),
+                'default_value' => false,
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+            array(
+                'key' => 'field_adoption_select_page',
+                'label' => '表示店舗',
+                'name' => 'select_page',
+                'type' => 'select',
+                'choices' => array(
+                    'oomiya' => '大宮黒猫店',
+                    'newshop' => '川越クレアモール店',
+                ),
+                'default_value' => false,
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+            array(
+                'key' => 'field_adoption_stage',
+                'label' => '募集状況',
+                'name' => 'adoption_stage',
+                'type' => 'select',
+                'choices' => array(
+                    'adoption' => '里親募集',
+                    'before' => '里親募集前',
+                ),
+                'default_value' => false,
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
+            array(
+                'key' => 'field_adoption_neko_img',
+                'label' => '猫の画像',
+                'name' => 'neko_img',
+                'type' => 'image',
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+            ),
             array(
                 'key' => 'field_adoption_color',
                 'label' => '毛色',

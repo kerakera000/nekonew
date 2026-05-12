@@ -44,7 +44,10 @@ if ( ! function_exists( 'neko_adoption_shop_name' ) ) {
             'oomiya' => '大宮黒猫店',
             'newshop' => '川越クレアモール店',
             '大宮黒猫店' => '大宮黒猫店',
+            'クレアモール川越店' => '川越クレアモール店',
             '川越クレアモール店' => '川越クレアモール店',
+            'newshop：クレアモール川越店' => '川越クレアモール店',
+            'newshop：川越クレアモール店' => '川越クレアモール店',
         );
 
         return isset( $shops[ $value ] ) ? $shops[ $value ] : $value;
