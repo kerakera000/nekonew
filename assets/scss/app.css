@@ -63,13 +63,7 @@
 .inner-content {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 34px;
   width: 100%;
-}
-@media (max-width: 425px) {
-  .inner-content {
-    padding: 0px 24px 0px;
-  }
 }
 
 .inner800 {
@@ -3366,7 +3360,9 @@ html {
 }
 
 .AdoptionDetail {
+  width: 100%;
   padding-top: 73px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3378,7 +3374,13 @@ html {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .AdoptionDetail__inner {
+    padding: 0 20px;
+  }
+}
 .AdoptionDetail__card {
+  width: 100%;
   display: flex;
   gap: 10px;
   margin-top: 30px;
@@ -3484,10 +3486,10 @@ html {
   }
 }
 .AdoptionDetail__box {
+  width: 100%;
   display: flex;
   gap: 30px;
-  margin-bottom: 40px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -3499,19 +3501,15 @@ html {
 }
 .AdoptionDetail__section {
   width: 100%;
+  max-width: 750px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 10px 36px;
-}
-@media (max-width: 768px) {
-  .AdoptionDetail__section {
-    padding: 10px 0;
-  }
 }
 .AdoptionDetail__section-lead p {
   width: 100%;
+  max-width: 800px;
   padding-left: 0;
   color: #000000;
   font-size: 22px;
@@ -3528,7 +3526,6 @@ html {
   }
 }
 .AdoptionDetail__section .title {
-  left: -20px;
   color: #000000;
   font-size: 26px;
   font-weight: 800;
@@ -3544,10 +3541,12 @@ html {
   }
 }
 .AdoptionDetail__section p {
+  margin-top: 16px;
   padding-left: 18px;
   color: #000000;
   font-size: 22px;
   font-weight: 500;
+  line-height: 1.8;
 }
 @media (max-width: 768px) {
   .AdoptionDetail__section p {
@@ -3565,7 +3564,7 @@ html {
 .AdoptionDetail__table {
   width: 100%;
   min-width: 640px;
-  margin-top: 18px;
+  margin-top: 25px;
   border-collapse: collapse;
   border: 1px solid #d9d9d9;
   background: #fff;
@@ -3940,11 +3939,11 @@ html {
 }
 
 .neko-model {
-  padding: 40px 20px 90px;
+  padding: 40px 20px 50px;
 }
 .neko-model__inner {
   width: 100%;
-  max-width: 680px;
+  max-width: 750px;
   margin: 0 auto;
 }
 .neko-model__title {
@@ -3962,7 +3961,6 @@ html {
   }
 }
 .neko-model__lead {
-  margin: 0 auto 28px;
   color: #333333;
   font-size: 20px;
   font-weight: 800;
@@ -3976,9 +3974,12 @@ html {
 }
 .neko-model__block {
   margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 .neko-model__heading {
-  margin-bottom: 14px;
   color: #000000;
   font-size: 28px;
   font-weight: 900;
@@ -4041,8 +4042,12 @@ html {
   }
 }
 .neko-model__detail {
-  max-width: 560px;
+  max-width: 500px;
   margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 .neko-model__text-block {
   margin-top: 42px;
@@ -4143,7 +4148,7 @@ html {
 }
 
 .Crowdfunding {
-  padding: 80px 20px 90px;
+  padding: 120px 20px 50px;
 }
 .Crowdfunding__inner {
   max-width: 620px;

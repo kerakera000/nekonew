@@ -117,7 +117,9 @@
 }
 
 .AdoptionDetail {
+    width: 100%;
     padding-top: 73px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,9 +129,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @media (max-width: 768px) {
+            padding: 0 20px;
+            
+        }
     }
 
     &__card {
+        width: 100%;
         display: flex;
         gap: 10px;
         margin-top: 30px;
@@ -224,10 +231,10 @@
     }
 
     &__box {
+        width: 100%;
         display: flex;
         gap: 30px;
-        margin-bottom: 40px;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         flex-direction: column;
         @media (max-width: 768px) {
@@ -238,17 +245,15 @@
 
     &__section {
         width: 100%;
+        max-width: 750px;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        padding: 10px 36px;
-        @media (max-width: 768px) {
-            padding: 10px 0;
-        }
         &-lead {
             p {
                 width: 100%;
+                max-width: 800px;
                 padding-left: 0;
                 color: #000000;
                 font-size: 22px;
@@ -262,7 +267,6 @@
             }
         }
         .title{
-            left: -20px;
             color: #000000;
             font-size: 26px;
             font-weight: 800;
@@ -274,10 +278,12 @@
             }
         }
         p {
+            margin-top: 16px;
             padding-left: 18px;
             color: #000000;
             font-size: 22px;
             font-weight: 500;
+            line-height: 1.8;
             @media (max-width: 768px) {
                 font-size: 15px;
             }
@@ -294,7 +300,7 @@
     &__table {
         width: 100%;
         min-width: 640px;
-        margin-top: 18px;
+        margin-top: 25px;
         border-collapse: collapse;
         border: 1px solid #d9d9d9;
         background: #fff;

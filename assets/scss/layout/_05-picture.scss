@@ -1,11 +1,11 @@
 @use "../init/index" as *;
 
 .neko-model {
-    padding: 40px 20px 90px;
+    padding: 40px 20px 50px;
 
     &__inner {
         width: 100%;
-        max-width: 680px;
+        max-width: 750px;
         margin: 0 auto;
     }
 
@@ -24,7 +24,6 @@
     }
 
     &__lead {
-        margin: 0 auto 28px;
         color: #333333;
         font-size: 20px;
         font-weight: 800;
@@ -38,10 +37,13 @@
 
     &__block {
         margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
     &__heading {
-        margin-bottom: 14px;
         color: #000000;
         font-size: 28px;
         font-weight: 900;
@@ -108,8 +110,12 @@
     }
 
     &__detail {
-        max-width: 560px;
+        max-width: 500px;
         margin: 48px auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
     &__text-block {

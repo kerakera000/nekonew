@@ -57,11 +57,7 @@
 .inner-content{
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 0 34px;
     width: 100%;
-    @media (max-width: 425px) {
-        padding: 0px 24px 0px;
-    }
 }
 
 .inner800{
