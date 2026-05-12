@@ -19,6 +19,9 @@
             @media (max-width: 768px) {
                 font-size: 26px;
             }
+            @media (max-width: 425px) {
+                font-size: 20px;
+            }
             img{
                 width: 100%;
                 height: 100%;
@@ -114,7 +117,7 @@
 }
 
 .AdoptionDetail {
-    padding-top: 30px;
+    padding-top: 73px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,15 +232,35 @@
         flex-direction: column;
         @media (max-width: 768px) {
             gap: 20px;
+            min-width: 280px;
         }
     }
 
     &__section {
+        width: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
         padding: 10px 36px;
+        @media (max-width: 768px) {
+            padding: 10px 0;
+        }
+        &-lead {
+            p {
+                width: 100%;
+                padding-left: 0;
+                color: #000000;
+                font-size: 22px;
+                font-weight: 500;
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
+                @media (max-width: 425px) {
+                    font-size: 13px;
+                }
+            }
+        }
         .title{
             left: -20px;
             color: #000000;
@@ -251,6 +274,7 @@
             }
         }
         p {
+            padding-left: 18px;
             color: #000000;
             font-size: 22px;
             font-weight: 500;

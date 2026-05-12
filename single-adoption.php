@@ -154,7 +154,7 @@ get_template_part( './template/header' );
 
                     <div class="AdoptionDetail__box">
                         <?php if ( $lead_text ) : ?>
-                            <div class="AdoptionDetail__section">
+                            <div class="AdoptionDetail__section-lead">
                                 <?php echo $lead_text; ?>
                             </div>
                         <?php endif; ?>

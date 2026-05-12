@@ -394,6 +394,9 @@
     top: 29px;
     right: 25px;
     z-index: 999;
+    @media (max-width: 1440px) {
+        top: 22px;
+    }
 
     span {
         width: 100%;
