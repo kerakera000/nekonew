@@ -3,18 +3,6 @@
  * カスタムタクソノミー
  */
 
-register_taxonomy(
-  'new-temppage',
-  array('temppage'),
-  array(
-    'label' => 'カテゴリ',
-    'public' => true,'show_ui' => true,
-    'hierarchical' => true,
-    'query_var' => true,
-    'show_in_rest' => true,
-  )
-);
-
 // 猫の店舗カテゴリー
 /*---------------------------------------------*/
 register_taxonomy(
@@ -27,7 +15,7 @@ register_taxonomy(
     'hierarchical' => true,
     'query_var' => true,
     'show_in_rest' => true,
-    'show_admin_column' => true,
+    'show_admin_column' => false,
     'labels' => array(
       'name' => '店舗',
       'singular_name' => '店舗',

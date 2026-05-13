@@ -3,18 +3,6 @@
  * WP初期設定関数群
  */
 
-// 管理メニューの一部非表示
-function remove_menus()
-{
-    // カスタム投稿タイプのスラッグ
-    $custom_post_type = 'temppage';
-
-    // カスタム投稿タイプのメニューを非表示にする
-    remove_menu_page('edit.php?post_type=' . $custom_post_type);
-}
-add_action('admin_menu', 'remove_menus');
-
-
 // 日本語スラッグの禁止
 function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
   if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {

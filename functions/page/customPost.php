@@ -4,24 +4,6 @@
  */
 
 function create_post_type() {
-  // Post
-  /*---------------------------------------------*/
-  register_post_type(
-    'temppage',
-    array(
-      'label' => 'テンプレート投稿',
-      'public' => true,
-      'has_archive' => true,
-      'menu_position' => 4,
-      'show_in_rest' => true,
-      'show_ui' => true,
-      'supports' => array(
-        'title',
-        'thumbnail'
-      ),
-    )
-  );
-
   // 猫の紹介投稿
   /*---------------------------------------------*/
   register_post_type(
@@ -188,6 +170,57 @@ if ( ! function_exists( 'adoption_post_custom_column' ) ) {
 
 add_filter( 'manage_adoption_posts_columns', 'adoption_post_columns' );
 add_action( 'manage_adoption_posts_custom_column', 'adoption_post_custom_column', 10, 2 );
+
+if ( ! function_exists( 'cats_post_columns' ) ) {
+  function cats_post_columns( $columns ) {
+    $new_columns = array();
+    foreach ( $columns as $key => $label ) {
+      if ( 'taxonomy-cat-shop' === $key ) {
+        continue;
+      }
+      $new_columns[ $key ] = $label;
+      if ( 'title' === $key ) {
+        $new_columns['select_page'] = '店舗';
+      }
+    }
+    return $new_columns;
+  }
+}
+
+if ( ! function_exists( 'cats_post_custom_column' ) ) {
+  function cats_post_custom_column( $column, $post_id ) {
+    if ( 'select_page' !== $column ) {
+      return;
+    }
+
+    $value = get_field( 'select_page', $post_id );
+    if ( ! $value ) {
+      $value = get_post_meta( $post_id, 'select_page', true );
+    }
+
+    if ( ! $value ) {
+      echo '—';
+      return;
+    }
+
+    $value = neko_clean_select_value( $value );
+    $map = array(
+      'oomiya' => '大宮黒猫店',
+      'newshop' => '川越クレアモール店',
+      'newshop：クレアモール川越店' => '川越クレアモール店',
+      'oomiya：大宮黒猫店' => '大宮黒猫店',
+      'newshop：川越クレアモール店' => '川越クレアモール店',
+      '大宮黒猫店' => '大宮黒猫店',
+      'クレアモール川越店' => '川越クレアモール店',
+      '川越クレアモール店' => '川越クレアモール店',
+    );
+
+    echo esc_html( isset( $map[ $value ] ) ? $map[ $value ] : $value );
+  }
+}
+
+add_filter( 'manage_cats_posts_columns', 'cats_post_columns' );
+add_action( 'manage_cats_posts_custom_column', 'cats_post_custom_column', 10, 2 );
 
 if ( ! function_exists( 'info_post_columns' ) ) {
   function info_post_columns( $columns ) {
