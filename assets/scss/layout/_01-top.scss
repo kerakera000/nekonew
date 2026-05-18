@@ -636,7 +636,7 @@
 }
 
 .Access {
-    padding: 90px 20px 50px;
+    padding: 90px 20px 120px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -656,7 +656,7 @@
 
     }
     .Access-content-text{
-        color: #000000;
+        color: #ffffff;
         background-color: #f4678f;
         font-size: 18px;
         font-weight: 500;
@@ -665,6 +665,7 @@
         width: 100%;
         text-align: center;
         margin-top: 10px;
+        padding: 5px 0;
     }
     .Access-content{
         width: 100%;

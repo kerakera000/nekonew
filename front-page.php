@@ -47,6 +47,43 @@ get_template_part('./template/head');
         </div>
     </div>
 
+    <img class="max-layoutimg m50" src="<?= $wp_path; ?>/assets/img/sozai/ul05.svg" alt="猫カフェいちご">
+
+    <div class="Access layout-content">
+        <div class="inner-content">
+            <h3 class="Access-content-title">
+                店舗一覧
+            </h3>
+            <p class="Access-content-text">
+                猫カフェ予約ページはこちら
+            </p>
+            <div class="Access-content">
+                <div class="Access-itemimg flex">
+                    <a href="<?= $site_url; ?>/index.php/shop1" class="titlebox top-shoplist">
+                        <h3 class="title">
+                            <img src="<?= $wp_path; ?>/assets/img/sozai/icon01.svg" alt="ShopInfo">
+                            大宮黒猫店
+                        </h3>
+                        <img src="<?= $wp_path; ?>/assets/img/access/2.jpg" alt="ShopInfo">
+                        <div class="link">
+                          詳細ページ
+                        </div>
+                    </a>
+                    <a href="<?= $site_url; ?>/index.php/shop2" class="titlebox">
+                        <h3 class="title">
+                            <img src="<?= $wp_path; ?>/assets/img/sozai/icon01.svg" alt="ShopInfo">
+                            川越クレモアール店
+                        </h3>
+                        <img src="<?= $wp_path; ?>/assets/img/shop2/shop.jpg" alt="ShopInfo">
+                        <div class="link">
+                          詳細ページ
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <img class="max-layoutimg" src="<?= $wp_path; ?>/assets/img/sozai/ul02.svg" alt="猫カフェいちご">
 
     <div id="NEWS" class="News layout-content">
@@ -303,7 +340,7 @@ get_template_part('./template/head');
             <div class="methods">
                 <h3 class="methods__title">お支払い方法一覧</h3>
                 <div class="methods__item">
-                    <img src="<?= $wp_path; ?>/assets/img/price/method-credit.jpg" alt="image-1" class="image-1">
+                    <img src="<?= $wp_path; ?>/assets/img/price/method-credit.png" alt="image-1" class="image-1">
                     <img src="<?= $wp_path; ?>/assets/img/price/method-IC.jpg" alt="image-2" class="image-2">
                     <img src="<?= $wp_path; ?>/assets/img/price/method-IC2.png" alt="image-3" class="image-3">
                 </div>
@@ -511,46 +548,6 @@ get_template_part('./template/head');
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <img class="max-layoutimg m50" src="<?= $wp_path; ?>/assets/img/sozai/ul05.svg" alt="猫カフェいちご">
-
-    <div class="Access layout-content">
-        <div class="inner-content">
-            <h3 class="Access-content-title">
-                店舗一覧
-            </h3>
-            <p class="Access-content-text">
-                猫カフェ予約ページはこちら
-            </p>
-            <div class="Access-content">
-                <div class="Access-itemimg flex">
-                    <a href="<?= $site_url; ?>/index.php/shop1" class="titlebox top-shoplist">
-                        <h3 class="title">
-                            <img src="<?= $wp_path; ?>/assets/img/sozai/icon01.svg" alt="ShopInfo">
-                            大宮黒猫店
-                        </h3>
-                        <img src="<?= $wp_path; ?>/assets/img/access/2.jpg" alt="ShopInfo">
-                        <div class="link">
-                          詳細ページ
-                        </div>
-                    </a>
-                    <a href="<?= $site_url; ?>/index.php/shop2" class="titlebox">
-                        <h3 class="title">
-                            <img src="<?= $wp_path; ?>/assets/img/sozai/icon01.svg" alt="ShopInfo">
-                            川越クレモアール店
-                        </h3>
-                        <img src="<?= $wp_path; ?>/assets/img/shop2/shop.jpg" alt="ShopInfo">
-                        <div class="link">
-                          詳細ページ
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
         </div>
     </div>
 

@@ -247,6 +247,23 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
                 ),
             ),
             array(
+                'key' => 'field_info_template_url_label',
+                'label' => 'テンプレートURLラベル',
+                'name' => 'info_template_url_label',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => 'リンク表示テキスト（未入力のときはURLを表示）',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_info_template_enabled',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ),
+            array(
                 'key' => 'field_info_template_image',
                 'label' => 'テンプレート画像',
                 'name' => 'info_template_image',
