@@ -229,7 +229,7 @@ get_template_part('./template/head');
                     <p class="text">
                     オンラインサイトでしか取り扱っていないねこカフェ商品も多数ございますので、ぜひご覧下さいませ。<br>
                     </p>
-                    <a href="#" class="shop-link">オンラインショップはこちらへ</a>
+                    <a href="<?php echo esc_url('https://nekocafe15.base.shop/'); ?>" class="shop-link" target="_blank" rel="noopener noreferrer">オンラインショップはこちらへ</a>
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ global $site_url;
                 ご利用料金
             </span>
         </a>
-        <a class="link" href="/#ONLINESHOP">
+        <a class="link" href="<?php echo esc_url('https://nekocafe15.base.shop/'); ?>" target="_blank" rel="noopener noreferrer">
             <span class="text">
                 オンラインショップ
             </span>
