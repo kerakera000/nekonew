@@ -9,6 +9,9 @@ $business_notice_image = function_exists('get_field') ? neko_get_image_url(get_f
 $event_notice_image = function_exists('get_field') ? neko_get_image_url(get_field('shop_event_notice_image'), 'large') : '';
 $business_notice_image = $business_notice_image ?: $wp_path . '/assets/img/shop-info/Placeholder-image.png';
 $event_notice_image = $event_notice_image ?: $wp_path . '/assets/img/shop-info/Placeholder-image.png';
+$shop_address = '埼玉県さいたま市大宮区堀の内2丁目235-1';
+$shop_map_embed_url = 'https://www.google.com/maps?q=' . rawurlencode($shop_address) . '&output=embed';
+$shop_map_link_url = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($shop_address);
 
 ?>
 <?php
@@ -34,7 +37,18 @@ get_template_part('./template/head');
                         <img src="<?= $wp_path; ?>/assets/img/access/2.jpg" alt="ShopInfo">
                     </div>
                     <div class="titlebox">
-                        <img src="<?= $wp_path; ?>/assets/img/access/access1.png" alt="ShopInfo">
+                        <div class="Access-map">
+                            <iframe
+                                src="<?php echo esc_url($shop_map_embed_url); ?>"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="大宮黒猫店の地図"
+                            ></iframe>
+                            <a class="Access-map__link" href="<?php echo esc_url($shop_map_link_url); ?>" target="_blank" rel="noopener noreferrer">
+                                Googleマップで見る
+                            </a>
+                        </div>
                     </div>
                     
                 </div>
@@ -207,7 +221,7 @@ get_template_part('./template/head');
                         Instagram
                     </button>
                     <button id="SNS-button-item-twitter" class="SNS-button-item">
-                        X(旧Twitter)
+                        X
                     </button>
                     <button id="SNS-button-item-line" class="SNS-button-item">
                         公式LINE
@@ -246,7 +260,8 @@ get_template_part('./template/head');
                     ※180分ご利用されたい方は、1時間の枠を3枠ご予約をお願いいたします。<br>（例）13時から180分利用の場合→13時、14時、15時の3枠予約
                     </span>
                     <span class="sub-title">
-                    ※当日のご予約は必ずお電話にてのご連絡をお願いいたします。
+                    ※当日のご予約は必ずお電話にてのご連絡をお願いいたします。<br>
+                    ※『ご予約を5分以上すぎるとキャンセル扱いとなりますので、お遅れになる際は事前にご連絡をお願いいたします。』
                     </span>
                 </h3>
                 <div class="Reserve-form">

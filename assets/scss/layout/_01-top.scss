@@ -751,6 +751,31 @@
                     max-height: 336px;
                     object-fit: cover;
                 }
+                .Access-map{
+                    width: 100%;
+                    margin-top: 10px;
+                    iframe{
+                        width: 100%;
+                        height: 336px;
+                        border: 0;
+                        display: block;
+                    }
+                    &__link{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 10px;
+                        color: #e0204a;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 140%;
+                        @include fosanjp;
+                        text-decoration: underline;
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }
+                }
                 .link{
                     width: 200px;
                     height: 40px;
